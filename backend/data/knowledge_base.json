@@ -1,0 +1,239 @@
+{
+  "disease_overview": {
+    "title": "What is Parkinson's Disease?",
+    "content": "Parkinson's disease (PD) is a progressive neurodegenerative disorder that primarily affects the dopaminergic neurons in a specific area of the brain called the substantia nigra. These neurons play a critical role in producing dopamine, a chemical messenger responsible for coordinating smooth, purposeful movement. As these neurons deteriorate and die, dopamine levels fall, leading to the hallmark motor symptoms of the disease. Parkinson's is the second most common neurodegenerative disorder after Alzheimer's disease, affecting more than 10 million people worldwide, with roughly 60,000 new cases diagnosed in the United States each year.\n\nThe classic motor symptoms of Parkinson's disease include resting tremor (involuntary shaking that occurs when the muscles are relaxed), rigidity (muscle stiffness and resistance to movement), bradykinesia (slowness of movement), and postural instability (impaired balance and coordination). However, the disease also manifests through a wide range of non-motor symptoms including sleep disturbances, constipation, loss of smell (anosmia), depression, anxiety, cognitive changes, and autonomic dysfunction. These non-motor symptoms often appear years before the motor symptoms and can significantly impact quality of life.\n\nOne of the earliest and most consistent non-motor features of Parkinson's disease is vocal deterioration. Studies show that over 90% of individuals with PD develop some form of voice or speech disorder, collectively termed hypokinetic dysarthria. This manifests as a soft, breathy, or hoarse voice; reduced pitch variation (monotone speech); imprecise articulation; irregular speech rate; and decreased vocal loudness. These vocal changes arise because the muscles controlling the larynx, tongue, and respiratory system are affected by the same dopaminergic deficits that cause limb tremors. As a result, voice analysis has emerged as a powerful, non-invasive biomarker for early detection.\n\nVoice-based screening for Parkinson's disease leverages the measurable acoustic properties of sustained vowel phonations — most commonly the vowel 'aah' held for several seconds. From these recordings, researchers and clinicians extract features related to frequency variation (jitter), amplitude variation (shimmer), the ratio of harmonic to noise components, and nonlinear dynamical measures reflecting the complexity and periodicity of vocal fold vibration. Machine learning models trained on these features can distinguish PD patients from healthy controls with high accuracy, offering a low-cost, scalable, and non-invasive screening method that can be administered remotely. This tool uses exactly such an approach to provide an initial screening result.",
+    "key_facts": [
+      "10+ million people affected worldwide",
+      "Second most common neurodegenerative disorder",
+      "90%+ of PD patients develop vocal symptoms",
+      "Voice changes can precede motor symptoms by years",
+      "No cure, but treatment can significantly improve quality of life"
+    ]
+  },
+  "biomarkers": {
+    "MDVP:Fo": {
+      "name": "Average Fundamental Frequency",
+      "description": "MDVP:Fo (Multi-Dimensional Voice Program: Fundamental Frequency) represents the average pitch of the voice, measured in Hertz (Hz). It corresponds to the rate at which the vocal folds vibrate per second during sustained phonation. Fundamental frequency is the perceptual correlate of voice pitch — a higher Fo means a higher-pitched voice. In Parkinson's disease, dopaminergic deficits impair the fine motor control of the laryngeal muscles, often resulting in a reduced or fluctuating fundamental frequency. Reduced Fo can indicate hypophonia and reduced laryngeal muscle tone.",
+      "normal_range": "85–255 Hz (male: ~120 Hz, female: ~210 Hz)",
+      "abnormal_sign": "Lower than expected values may suggest reduced laryngeal muscle tone and vocal hypophonia; excessively high values with low HNR may indicate breathiness"
+    },
+    "MDVP:Fhi": {
+      "name": "Maximum Fundamental Frequency",
+      "description": "MDVP:Fhi represents the highest fundamental frequency achieved during sustained phonation. This measure captures the upper extent of the speaker's pitch range within the recording. In Parkinson's disease, restricted pitch range is common — patients often show reduced ability to modulate their pitch upward, resulting in a compressed Fhi. A lower-than-normal Fhi relative to Fo suggests limited vocal flexibility and is associated with hypokinetic dysarthria.",
+      "normal_range": "100–300 Hz (varies widely by sex and age)",
+      "abnormal_sign": "Abnormally low Fhi relative to Fo indicates restricted pitch range and reduced laryngeal flexibility, a common sign in Parkinson's dysarthria"
+    },
+    "MDVP:Flo": {
+      "name": "Minimum Fundamental Frequency",
+      "description": "MDVP:Flo is the lowest fundamental frequency recorded during sustained phonation. Together with Fhi, it defines the pitch range of the speaker's voice. In Parkinson's disease, the pitch floor may be affected by tremor-induced instability, where the voice drops unpredictably. Abnormal Flo values — whether extremely low or paradoxically close to Fo (indicating a narrow pitch range) — are diagnostically meaningful and reflect compromised laryngeal muscle coordination.",
+      "normal_range": "65–200 Hz (lower in males, higher in females)",
+      "abnormal_sign": "An Flo very close to Fo (narrow pitch range) suggests monotone speech typical of PD. Very low Flo may indicate vocal breaks or tremor-induced pitch instability"
+    },
+    "MDVP:Jitter(%)": {
+      "name": "Jitter (Percentage)",
+      "description": "Jitter refers to cycle-to-cycle variation in the fundamental frequency (F0) of the voice. MDVP:Jitter(%) expresses this variation as a percentage of the average period. In healthy phonation, vocal fold vibration is highly periodic; the period from one cycle to the next should be nearly identical. Parkinson's disease disrupts the neural control of vocal fold muscles, introducing irregular micro-fluctuations in the vibration cycle. Elevated jitter is one of the most sensitive indicators of neuromotor vocal dysfunction and correlates strongly with the perceptual quality of voice hoarseness and roughness.",
+      "normal_range": "< 1.040% (typically 0.3–0.8%)",
+      "abnormal_sign": "Values above 1.040% indicate pathological cycle-to-cycle pitch instability; strongly elevated jitter (>2%) is associated with moderate-to-severe vocal dysfunction in Parkinson's disease"
+    },
+    "MDVP:Jitter(Abs)": {
+      "name": "Jitter (Absolute)",
+      "description": "MDVP:Jitter(Abs) is the absolute measure of cycle-to-cycle variation in the fundamental period, expressed in microseconds (μs) rather than as a percentage. It provides the raw magnitude of period-to-period variation without normalization. This measure is complementary to percentage jitter and is particularly useful for detecting subtle changes in high-pitched voices where percentage jitter might underestimate absolute temporal instability. Elevated absolute jitter reflects compromised fine motor control of the larynx, consistent with the neuromotor deficits in Parkinson's disease.",
+      "normal_range": "< 83.2 μs (typically 20–50 μs)",
+      "abnormal_sign": "Values above 83.2 μs indicate significant temporal instability of vocal fold vibration; may correlate with visible laryngeal tremor on stroboscopy"
+    },
+    "MDVP:RAP": {
+      "name": "Relative Average Perturbation",
+      "description": "MDVP:RAP (Relative Average Perturbation) is a measure of the average absolute difference between each vocal period and the average of itself and its immediate neighbors (a 3-point smoothing). It is a more robust jitter measure than simple cycle-to-cycle comparison because it averages over three consecutive periods, reducing sensitivity to isolated outlier periods while still capturing genuine neuromotor instability. RAP is particularly sensitive to the slow, rhythmic tremor characteristic of Parkinson's disease, which introduces systematic rather than random perturbations.",
+      "normal_range": "< 0.680% (typically 0.2–0.5%)",
+      "abnormal_sign": "Elevated RAP indicates systematic perturbation of vocal fold periodicity, often reflecting a rhythmic tremor superimposed on the phonation signal"
+    },
+    "MDVP:PPQ": {
+      "name": "Pitch Period Perturbation Quotient",
+      "description": "MDVP:PPQ (Pitch Period Perturbation Quotient) measures the average absolute deviation of each period from the mean of a 5-period local neighborhood. This 5-point smoothing window makes PPQ particularly sensitive to medium-frequency tremor in the range of 4–12 Hz, which corresponds exactly to the frequency range of Parkinsonian rest tremor. It is considered one of the most clinically relevant jitter measures for Parkinson's screening because it captures the exact tremor frequency band that characterizes the disease.",
+      "normal_range": "< 0.840% (typically 0.3–0.6%)",
+      "abnormal_sign": "Elevated PPQ is specifically sensitive to 4–12 Hz tremor, directly corresponding to the frequency range of Parkinsonian rest tremor; a highly specific indicator of PD-related vocal dysfunction"
+    },
+    "Jitter:DDP": {
+      "name": "Jitter DDP (Average Absolute Difference of Differences)",
+      "description": "Jitter:DDP (Difference of Differences of Periods) is computed as the average absolute difference between consecutive differences of vocal periods. It is mathematically equivalent to three times RAP and represents the second-order derivative of period variation, making it sensitive to acceleration changes in vocal fold vibration. DDP captures irregular bursts of tremor or sudden changes in the pattern of vibration irregularity, reflecting the unpredictable neuromotor control in Parkinson's disease. It is often elevated in concert with other jitter measures.",
+      "normal_range": "< 2.040% (3× RAP normal limit)",
+      "abnormal_sign": "Elevated DDP indicates rapid changes in the pattern of vocal fold perturbation, reflecting irregular neuromotor commands from compromised basal ganglia circuits"
+    },
+    "MDVP:Shimmer": {
+      "name": "Shimmer (Amplitude Variation)",
+      "description": "Shimmer quantifies the cycle-to-cycle variation in the amplitude (loudness) of vocal fold vibration. While jitter measures pitch instability, shimmer measures loudness instability. In Parkinson's disease, the respiratory and laryngeal muscles responsible for maintaining consistent subglottal air pressure and vocal fold adduction tension are affected, leading to irregular amplitude modulation. Elevated shimmer correlates perceptually with a breathy, weak, or 'wavering' voice quality and indicates poor respiratory-laryngeal coordination.",
+      "normal_range": "< 3.810% (typically 1–3%)",
+      "abnormal_sign": "Values above 3.810% indicate pathological amplitude instability; in PD, shimmer often increases progressively as respiratory muscle weakness and bradykinesia worsen"
+    },
+    "MDVP:Shimmer(dB)": {
+      "name": "Shimmer in Decibels",
+      "description": "MDVP:Shimmer(dB) expresses cycle-to-cycle amplitude variation in decibels (dB), providing a logarithmic scale representation that more closely matches human perception of loudness variation. The decibel scale is particularly useful for detecting large outlier amplitude variations that might be underrepresented in the percentage-based shimmer measure. In Parkinson's disease, both shimmer measures are typically elevated, but the dB measure can reveal the subjective magnitude of perceived voice wavering that patients and clinicians notice during conversation.",
+      "normal_range": "< 0.350 dB (typically 0.10–0.30 dB)",
+      "abnormal_sign": "Values above 0.350 dB indicate perceptually significant amplitude instability; values >0.5 dB typically correspond to clearly audible voice wavering"
+    },
+    "Shimmer:APQ3": {
+      "name": "Amplitude Perturbation Quotient (3-point)",
+      "description": "Shimmer:APQ3 is the average absolute amplitude difference between each cycle and the mean of its 3-point neighborhood (itself and immediate neighbors). The 3-point smoothing makes APQ3 sensitive to rapid amplitude fluctuations occurring over 2–3 consecutive cycles. This short-window measure captures fine-grained amplitude turbulence associated with incomplete or irregular vocal fold closure and is particularly sensitive to the moment-to-moment respiratory pressure fluctuations that characterize early Parkinson's disease when the respiratory system begins to lose its smooth motor control.",
+      "normal_range": "< 2.300% (typically 0.8–1.8%)",
+      "abnormal_sign": "Elevated APQ3 reflects rapid, fine-grained amplitude instability; can indicate early respiratory-laryngeal incoordination before overt dysarthria becomes apparent"
+    },
+    "Shimmer:APQ5": {
+      "name": "Amplitude Perturbation Quotient (5-point)",
+      "description": "Shimmer:APQ5 is computed using a 5-point neighborhood for smoothing, making it sensitive to slightly lower-frequency amplitude variations than APQ3. The 5-point window better captures the medium-rate amplitude fluctuations associated with Parkinsonian tremor (4–12 Hz), similar to PPQ for jitter. The combination of APQ3, APQ5, and APQ11 (MDVP:APQ) provides a multi-scale view of amplitude instability across different tremor frequencies, allowing clinicians to characterize the specific frequency signature of vocal tremor.",
+      "normal_range": "< 2.100% (typically 0.9–1.7%)",
+      "abnormal_sign": "Elevated APQ5 is particularly sensitive to medium-frequency amplitude tremor in the Parkinsonian range; combined elevation with APQ3 and APQ11 strongly suggests organic vocal pathology"
+    },
+    "MDVP:APQ": {
+      "name": "Amplitude Perturbation Quotient (11-point)",
+      "description": "MDVP:APQ uses an 11-point neighborhood for amplitude perturbation calculation, making it the most robust of the shimmer family measures. The 11-point smoothing window captures slow, long-period amplitude fluctuations that might represent low-frequency respiratory tremor or slow variations in subglottal pressure. This measure is less sensitive to high-frequency noise but more sensitive to slow, sustained amplitude drift — a pattern associated with the progressive respiratory muscle fatigue seen in Parkinson's disease during sustained phonation tasks.",
+      "normal_range": "< 3.070% (typically 1.0–2.5%)",
+      "abnormal_sign": "Elevated MDVP:APQ indicates sustained, slow amplitude drift during phonation; may reflect progressive laryngeal fatigue and worsening respiratory control"
+    },
+    "Shimmer:DDA": {
+      "name": "Shimmer DDA (Difference of Differences of Amplitudes)",
+      "description": "Shimmer:DDA is the amplitude analog of Jitter:DDP — it measures the average absolute difference between consecutive differences of amplitude values. This second-order amplitude measure captures acceleration changes in vocal amplitude, reflecting rapid, irregular bursts of amplitude variation. DDA is particularly sensitive to sudden amplitude spikes or drops that interrupt an otherwise quasi-periodic vibration pattern, a characteristic of severe neuromotor dysregulation in advanced Parkinson's disease and other laryngeal pathologies.",
+      "normal_range": "< 6.900% (3× APQ3 normal limit)",
+      "abnormal_sign": "Elevated DDA indicates erratic, acceleration-type amplitude fluctuations; associated with severe vocal fold closure irregularities and significant neuromotor dysfunction"
+    },
+    "NHR": {
+      "name": "Noise-to-Harmonics Ratio",
+      "description": "The Noise-to-Harmonics Ratio (NHR) measures the proportion of turbulent, non-periodic noise energy relative to the harmonic (periodic) energy in the voice signal. A healthy voice has low NHR because vocal fold vibration is largely periodic and produces clear harmonic structure. Parkinson's disease causes incomplete or irregular vocal fold closure due to reduced muscle tone and incoordination, allowing air to escape turbulently between the folds even during phonation — increasing the noise component. Elevated NHR corresponds perceptually to breathiness, hoarseness, or a 'rough' voice quality.",
+      "normal_range": "< 0.190 (typically 0.05–0.15)",
+      "abnormal_sign": "Values above 0.190 indicate significant glottal noise, suggesting incomplete vocal fold closure; values >0.30 typically correlate with clearly audible breathiness and may reflect significant laryngeal hypotonia"
+    },
+    "HNR": {
+      "name": "Harmonics-to-Noise Ratio",
+      "description": "HNR (Harmonics-to-Noise Ratio) is the inverse of NHR and is expressed in decibels, measuring the degree to which the voice signal is harmonic (periodic) versus noisy. A high HNR indicates a clear, regular, 'clean' voice with well-defined pitch; a low HNR indicates a noisy, irregular voice. HNR is one of the most clinically important voice quality measures: values below approximately 20 dB are associated with perceived voice pathology, and in Parkinson's disease, HNR reduction reflects the cumulative effect of jitter, shimmer, and incomplete glottal closure on voice quality.",
+      "normal_range": "> 20 dB (typically 20–35 dB)",
+      "abnormal_sign": "HNR below 20 dB indicates significant voice pathology; values below 15 dB are associated with clearly perceptible hoarseness and breathiness characteristic of moderate-to-severe Parkinsonian dysarthria"
+    },
+    "RPDE": {
+      "name": "Recurrence Period Density Entropy",
+      "description": "RPDE (Recurrence Period Density Entropy) is a nonlinear dynamical measure derived from recurrence quantification analysis. It quantifies the entropy (disorder) of the recurrence periods in the voice signal's phase space. A healthy voice is highly periodic with low RPDE, meaning that the vocal fold vibration recurs at very regular intervals. Parkinson's disease introduces nonlinear instabilities in the neuromuscular control system that cannot be captured by linear measures like jitter and shimmer alone — RPDE detects these chaotic or semi-chaotic dynamics, making it a powerful complementary biomarker for early PD detection.",
+      "normal_range": "< 0.50 (typically 0.20–0.45)",
+      "abnormal_sign": "Elevated RPDE (>0.50) indicates high entropy and low predictability of vocal fold vibration, suggesting complex nonlinear dynamics associated with neuromotor dysfunction; a key early biomarker in voice-based PD detection"
+    },
+    "DFA": {
+      "name": "Detrended Fluctuation Analysis",
+      "description": "DFA (Detrended Fluctuation Analysis) is a nonlinear measure that quantifies the self-similarity or long-range correlations of the voice signal. It produces a scaling exponent that describes how fluctuations in the signal relate across different time scales. In healthy voices, the DFA exponent typically falls in a specific range that reflects the normal physiological complexity of vocal fold vibration. Parkinson's disease alters the fractal structure of vocal dynamics — the DFA exponent shifts toward values reflecting either reduced complexity (over-regularization due to rigidity) or increased randomness (due to tremor and incoordination).",
+      "normal_range": "0.5–0.8 (typically ~0.65–0.75)",
+      "abnormal_sign": "DFA values outside the normal range — either lower (indicating reduced long-range correlations/increased randomness) or higher (indicating hyper-regular, rigid dynamics) — both suggest pathological neuromotor control"
+    },
+    "spread1": {
+      "name": "Nonlinear Spread Measure 1",
+      "description": "Spread1 is a nonlinear measure derived from the fundamental frequency variation, representing the first principal component of the spread of the fundamental frequency in the voice signal. It quantifies the overall range and distribution of pitch variation in a nonlinear framework. In Parkinson's disease, the characteristic monotone speech and reduced pitch modulation alter the distribution of F0 values, leading to abnormal spread1 values. This measure, along with spread2, captures the statistical shape of the pitch distribution in ways that linear frequency statistics do not.",
+      "normal_range": "-7.964 to -2.434 (negative values typical)",
+      "abnormal_sign": "Abnormal spread1 values (less negative or positive) indicate atypical F0 distribution, reflecting reduced pitch variability and monotone speech characteristic of Parkinsonian hypokinetic dysarthria"
+    },
+    "spread2": {
+      "name": "Nonlinear Spread Measure 2",
+      "description": "Spread2 is the second nonlinear spread measure of fundamental frequency variation, capturing the secondary structure of pitch distribution. While spread1 reflects the primary axis of pitch variation, spread2 captures orthogonal variation patterns, together providing a more complete characterization of the statistical properties of vocal pitch dynamics. In Parkinson's disease, both spread measures are affected as the dopaminergic deficit limits the richness and variability of vocal pitch modulation, contributing to the characteristic flat, monotone speech.",
+      "normal_range": "0.006–0.450 (typically 0.1–0.35)",
+      "abnormal_sign": "Abnormal spread2 indicates altered pitch distribution shape; combined abnormal spread1 and spread2 strongly suggest pathological pitch dynamics inconsistent with healthy vocal function"
+    },
+    "D2": {
+      "name": "Correlation Dimension",
+      "description": "D2 (Correlation Dimension) is a nonlinear measure of the fractal dimensionality of the vocal signal's phase space attractor. It quantifies the complexity of the underlying dynamical system generating the voice signal. A healthy voice has moderate complexity (moderate D2), reflecting the well-regulated but inherently complex neuromuscular control of the larynx. Parkinson's disease alters this complexity: tremor and rigidity can either reduce D2 (when tremor dominates, creating a quasi-periodic, lower-dimensional attractor) or increase it (when the system becomes more chaotic and unpredictable).",
+      "normal_range": "1.8–3.0 (typically ~2.0–2.5)",
+      "abnormal_sign": "D2 values outside the normal range — especially low values indicating reduced dynamical complexity (consistent with tremor-dominated dynamics) — suggest underlying neuromuscular pathology"
+    },
+    "PPE": {
+      "name": "Pitch Period Entropy",
+      "description": "PPE (Pitch Period Entropy) is a nonlinear measure that quantifies the entropy (unpredictability) of the fundamental period sequence in the voice signal. Unlike jitter which measures the magnitude of period variation, PPE measures the randomness or unpredictability of the pattern of variation. A healthy voice has low PPE (the period sequence is predictable and quasi-regular), while a Parkinsonian voice has elevated PPE due to the irregular, tremor-driven perturbations that introduce unpredictability into the vibration pattern. PPE is particularly powerful because it captures the information-theoretic complexity of vocal fold dynamics beyond what linear measures detect.",
+      "normal_range": "0.044–0.234 (typically 0.05–0.20)",
+      "abnormal_sign": "Elevated PPE (>0.234) indicates high unpredictability of vocal fold period sequence; a highly sensitive early marker of neuromuscular instability in PD, often elevated even when jitter and shimmer are still within normal limits"
+    }
+  },
+  "risk_tiers": {
+    "low": {
+      "label": "Low Risk",
+      "range": "0–30%",
+      "summary": "The voice analysis indicates a low probability of Parkinson's disease based on the acoustic biomarkers extracted from your voice recording. The measured features fall largely within or near the normal ranges established for healthy adults, and the ensemble of machine learning models does not identify a pattern strongly consistent with Parkinsonian vocal dysfunction. This is a reassuring result.",
+      "next_steps": [
+        "No immediate clinical action is required based on this screening result.",
+        "Continue annual wellness checkups with your primary care physician and mention this screening.",
+        "Monitor for any emerging symptoms over time: tremor at rest, stiffness, slowness of movement, or changes in handwriting, gait, or voice quality.",
+        "If you developed any concerning symptoms that prompted this test, discuss them in detail with your doctor who can perform a comprehensive neurological evaluation.",
+        "You may repeat this voice screening in 12 months as part of routine monitoring, especially if you are in a high-risk group (family history, pesticide exposure, history of head trauma)."
+      ],
+      "lifestyle_tips": [
+        "Regular aerobic exercise (150+ minutes/week) has been shown to support dopaminergic neuron health and reduce PD risk.",
+        "Mediterranean diet rich in antioxidants, omega-3 fatty acids, and polyphenols (from berries, leafy greens, nuts, fish) may reduce neuroinflammation.",
+        "Adequate, high-quality sleep is essential for dopaminergic system maintenance and toxin clearance via the glymphatic system.",
+        "Avoid chronic pesticide, herbicide, and heavy metal exposure, which are established environmental risk factors for Parkinson's disease.",
+        "Engage in cognitively stimulating activities and social interactions to support overall brain health."
+      ],
+      "urgency": "routine",
+      "color": "#22c55e"
+    },
+    "moderate": {
+      "label": "Moderate Risk",
+      "range": "30–60%",
+      "summary": "The voice analysis has identified a moderate probability pattern of Parkinson's disease in your voice recording. Several acoustic biomarkers show values that deviate from healthy norms and overlap with patterns observed in early-to-mild Parkinson's disease. While this does not constitute a diagnosis, it suggests that a professional evaluation would be advisable to either rule out Parkinson's disease or identify it at an early, more treatable stage.",
+      "next_steps": [
+        "Schedule an appointment with a neurologist, preferably one specializing in movement disorders, within the next 1–3 months.",
+        "Prepare a detailed symptom history: note any tremor, stiffness, slowness, balance issues, sleep changes, constipation, loss of smell, or mood changes, and when they first appeared.",
+        "Your neurologist will likely perform a structured neurological examination (UPDRS scale) and may order dopamine transporter imaging (DaTscan) to assess dopaminergic function.",
+        "Bring this report and the detailed acoustic feature analysis to your appointment as supporting data.",
+        "In the meantime, keep a symptom diary to track any changes in voice, movement, or other bodily functions.",
+        "Consider speaking with a speech-language pathologist for an independent voice assessment using validated clinical tools (GRBAS scale, CSL analysis)."
+      ],
+      "lifestyle_tips": [
+        "Begin or increase regular aerobic exercise immediately — exercise has neuroprotective effects and may slow dopaminergic neuron loss.",
+        "Vocal exercises (such as those from the LSVT LOUD program) can help maintain voice strength and clarity.",
+        "Optimize sleep quality as REM sleep behavior disorder is an early marker of PD and disrupted sleep accelerates neurodegeneration.",
+        "Reduce alcohol consumption and avoid recreational drugs, which can exacerbate dopaminergic dysfunction.",
+        "Join a Parkinson's disease support network for information and community, regardless of the final diagnosis outcome."
+      ],
+      "urgency": "advisory",
+      "color": "#f59e0b"
+    },
+    "high": {
+      "label": "High Risk",
+      "range": "60–85%",
+      "summary": "The voice analysis has detected a high probability pattern strongly consistent with Parkinson's disease vocal biomarkers. Multiple acoustic features — spanning jitter, shimmer, harmonic content, and nonlinear dynamic measures — are significantly outside healthy norms and closely match the patterns of Parkinsonian hypokinetic dysarthria. It is strongly recommended that you seek neurological evaluation promptly. Early diagnosis of Parkinson's disease is critically important as it enables early intervention, treatment initiation, and access to therapies that can significantly slow symptom progression.",
+      "next_steps": [
+        "Seek a neurological evaluation within 2–4 weeks — contact a movement disorders specialist or neurologist promptly.",
+        "If motor symptoms (tremor, stiffness, slowness, balance problems) are already present, escalate urgency and seek evaluation within 1–2 weeks.",
+        "Request a DaTscan (dopamine transporter SPECT scan) to directly assess dopaminergic neuron integrity, as well as standard MRI to rule out other causes.",
+        "Consider referral to a comprehensive Parkinson's Disease Center of Excellence for multidisciplinary evaluation.",
+        "Do not self-medicate or start any supplements targeting dopamine without physician guidance.",
+        "Involve a family member or trusted friend in medical appointments to help remember information and provide additional symptom observations.",
+        "Request referrals to physical therapy, occupational therapy, and speech-language pathology for baseline assessments."
+      ],
+      "lifestyle_tips": [
+        "Begin a structured, neurologist-supervised exercise program immediately — resistance training plus aerobic exercise is optimal for neuroprotection.",
+        "LSVT LOUD (Lee Silverman Voice Treatment) is a highly effective evidence-based speech therapy specifically designed for Parkinson's — ask your neurologist for a referral.",
+        "Reduce all environmental toxin exposures (pesticides, solvents, heavy metals) immediately.",
+        "Ensure 7–9 hours of quality sleep; discuss sleep disturbances with your doctor as untreated sleep disorders accelerate PD progression.",
+        "Consider connecting with the Parkinson's Foundation, Michael J. Fox Foundation, or equivalent local organizations for resources, clinical trials, and support."
+      ],
+      "urgency": "urgent",
+      "color": "#f97316"
+    },
+    "critical": {
+      "label": "Critical Risk",
+      "range": "85–100%",
+      "summary": "The voice analysis has identified a critical-level probability pattern with acoustic biomarkers that are highly characteristic of significant Parkinsonian vocal dysfunction. The degree of abnormality across multiple independent voice measures — including nonlinear dynamical features — is consistent with established Parkinson's disease patterns in clinical datasets. This result requires immediate neurological attention. While this tool cannot definitively diagnose Parkinson's disease, the strength of these signals warrants treating this as a medical priority.",
+      "next_steps": [
+        "Contact a neurologist or movement disorders specialist immediately — ideally within the next few days.",
+        "If you are experiencing significant motor symptoms (notable tremor, severe stiffness, frequent falls, or voice that others find difficult to understand), go to an urgent care or emergency department or call your doctor's emergency line today.",
+        "Bring this complete report, your symptom history, and any prior medical records to your appointment.",
+        "Request a comprehensive movement disorders evaluation including: UPDRS (Unified Parkinson's Disease Rating Scale) assessment, DaTscan, brain MRI, and complete blood workup to rule out other conditions.",
+        "Ask about enrollment in clinical trials — early-diagnosed PD patients are valuable candidates for neuroprotective therapy trials.",
+        "If you have a primary care physician, contact them today to facilitate a rapid neurology referral.",
+        "Arrange support from family members or caregivers for medical appointments and daily activities if symptoms are affecting function."
+      ],
+      "lifestyle_tips": [
+        "Your immediate priority is medical evaluation — lifestyle changes are important but secondary to obtaining a diagnosis and starting appropriate treatment.",
+        "Maintain regular mealtimes and hydration, as dehydration and poor nutrition can worsen neurological symptoms.",
+        "Fall prevention is critical: remove trip hazards at home, install grab bars in bathrooms, and use assistive devices if needed.",
+        "Voice exercises should be done regularly — speaking loudly and clearly, even when it feels difficult, helps maintain vocal function.",
+        "Connect with a social worker or case manager through your healthcare system to coordinate care, support services, and resources."
+      ],
+      "urgency": "immediate",
+      "color": "#ef4444"
+    }
+  },
+  "disclaimer": "This tool is for screening purposes only and does not constitute medical advice. The results are based on automated analysis of voice acoustic features using machine learning models trained on research datasets. No AI tool can definitively diagnose Parkinson's disease or any other medical condition. The accuracy of this screening depends on the quality of the audio recording, the characteristics of your voice, and other factors. Always consult a qualified neurologist or movement disorders specialist for diagnosis, and do not make medical decisions based solely on this result. If you are experiencing neurological symptoms, please seek professional medical evaluation promptly."
+}
